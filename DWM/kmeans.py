@@ -1,3 +1,4 @@
+# KMeans Clustering - 2 cluster structure
 n = int(input('Enter dimensions: '))
 if n == 1:
 	x = list(map(float, input('Enter the data points: ').split()))

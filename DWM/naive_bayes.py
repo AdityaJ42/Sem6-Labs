@@ -1,3 +1,4 @@
+# Naive Bayes Algorithm
 import pandas as pd
 
 
@@ -56,9 +57,3 @@ if (p1 * c1 / len(dataset)) > (p2 * c2 / len(dataset)):
 	print('The person will buy the computer')
 else:
 	print('The person will not buy the computer')
-
-"""
-Enter the tuple values(age, income, student, credit rating): Youth,Medium,Yes,Fair
-Prediction by Naive Bayes Classifier: The person will buy the computer
-
-"""

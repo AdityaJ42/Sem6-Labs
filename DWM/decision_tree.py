@@ -1,3 +1,4 @@
+# Decision Tree Classification - ID3 Algorithm
 import numpy as np
 import pandas as pd
 from numpy import log2 as log
@@ -83,5 +84,3 @@ tree = build_tree(df)
 prediction = predict(test, build_tree(df))
 print("Tree Structure: ", tree)
 print("Prediction: ", prediction)
-
-# Middle,Medium,No,Excellent
