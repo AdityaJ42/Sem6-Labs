@@ -1,3 +1,6 @@
+# First and Follow for a grammar
+
+
 def find_first(lhs, rhs):
 	first_list = []
 	for prod in rhs:

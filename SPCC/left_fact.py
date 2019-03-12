@@ -1,3 +1,4 @@
+# Left Factoring for a grammar
 import copy
 n = int(input('Enter number of rules: '))
 rules = {}

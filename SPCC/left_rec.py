@@ -1,3 +1,4 @@
+# Eliminate Left Recursion from a grammar
 n = int(input('Enter number of rules: '))
 rules = {}
 for i in range(n):

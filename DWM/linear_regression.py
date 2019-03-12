@@ -8,8 +8,8 @@ def read_data():
 	for n, line in enumerate(fd):
 		if n != 0:
 			content = line.strip().split(',')
-			x.append(int(content[0]))
-			y.append(int(content[1]))
+			x.append(float(content[0]))
+			y.append(float(content[1]))
 	return x, y
 
 

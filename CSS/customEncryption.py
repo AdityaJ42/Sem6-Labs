@@ -1,3 +1,4 @@
+# A custom encryption method using substitution and transposition cipher
 import time
 
 

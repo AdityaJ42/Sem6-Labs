@@ -1,3 +1,4 @@
+# Predictive Parser Table for given grammar (grammar without left recursion and factoring)
 def find_first(lhs, rhs):
 	first_list = []
 	for prod in rhs:
