@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+void main()
+{
+	int a = 5;
+
+	char b = 'b';
+	
+	printf("%d%s",a,b);
+}
