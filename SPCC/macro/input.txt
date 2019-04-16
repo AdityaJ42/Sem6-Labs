@@ -1,0 +1,12 @@
+macro mac1 &arg2,&arg2,&arg3
+load a,&arg1
+add b,&arg2
+store c,&arg3
+mend
+macro mac2 &arg1,&arg2,&arg3
+store a,&arg1
+add b,&arg2
+sub c,&arg3
+mend
+mac1 4,5,6
+mac2 d1,d2,d3

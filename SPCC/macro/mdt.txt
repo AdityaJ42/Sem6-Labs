@@ -1,0 +1,9 @@
+Index	Definition
+0	load a,&arg1
+1	add b,&arg2
+2	store c,&arg3
+3	mend
+3	store a,&arg1
+4	add b,&arg2
+5	sub c,&arg3
+6	mend
