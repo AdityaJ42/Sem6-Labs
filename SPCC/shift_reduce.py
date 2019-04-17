@@ -23,6 +23,8 @@ while len(ip) != 1 or stack != ('$' + lhs):
 		stack = stack.replace(temp, lhs)
 		print('{}\t\t{}\t\t{}  {}->{}'.format(stack, ip, 'Reduce', lhs, temp))
 	else:
+		if ip[0] == '$':
+			break
 		stack += ip[0]
 		ip = ip[1:]
 		print('{}\t\t{}\t\t{}'.format(stack, ip, 'Shift'))
