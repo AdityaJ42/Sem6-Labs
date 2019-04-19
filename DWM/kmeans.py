@@ -10,6 +10,7 @@ for i in range(n):
 	points = list(map(float, input('Enter point {}: '.format(i + 1)).split()))
 	data.append(points)
 k = int(input('Enter the number of clusters: '))
+
 centroids = [data[i] for i in range(k)]
 while True:
 	clusters = [[] for i in range(k)]
