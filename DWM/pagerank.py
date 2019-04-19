@@ -1,4 +1,5 @@
 import numpy as np
+
 transition_matrix = np.array([[0, 0, 0, 0.25, 1, 0.33],
                            [0.33, 0, 0, 0, 0, 0.33],
                            [0.33, 0.25, 0, 0.25, 0, 0],
@@ -8,7 +9,7 @@ transition_matrix = np.array([[0, 0, 0, 0.25, 1, 0.33],
 temp1 = transition_matrix
 page_rank_vector = np.array([0.167, 0.167, 0.167, 0.167, 0.167, 0.167])
 var = np.array([])
-temp = transition_matrix
+
 j = 1
 while(j <= 5):
     page_rank_vector = transition_matrix.dot(page_rank_vector)

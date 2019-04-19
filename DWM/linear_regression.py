@@ -2,7 +2,7 @@
 
 
 def read_data():
-	fd = open('Data.csv')
+	fd = open('LR.csv')
 	x = []
 	y = []
 	for n, line in enumerate(fd):
