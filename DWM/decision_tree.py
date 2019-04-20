@@ -75,7 +75,7 @@ def predict(example, tree):
 	return prediction
 
 
-df = pd.read_csv('DataSet.csv')
+df = pd.read_csv('NB.csv')
 df = df.iloc[:, 1:]
 X = input('Enter the tuple values(age, income, student, credit rating): ').split(',')
 test = {'AGE': X[0], 'INCOME': X[1], 'STUDENT': X[2], 'CREDIT': X[3]}
