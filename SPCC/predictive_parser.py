@@ -20,7 +20,7 @@ def find_first(lhs, rhs):
 
 def find_follow(variable, rules, first_set):
 	follow_list = []
-	if variable == 'S':
+	if variable == 'E':
 		follow_list.append('$')
 	variables = rules.keys()
 	for temp in variables:
@@ -73,11 +73,12 @@ def parser_table(rules, first, follow):
 				break
 	return table
 
-n = int(input('Enter the number of production rules: '))
-rules = {}
-for i in range(n):
-	rule = input('Enter rule ' + str(i + 1) + ': ').split('->')
-	rules[rule[0]] = rule[1].strip().split('|')
+# n = int(input('Enter the number of productions: '))
+rules, first, follow = {}, {}, {}
+# for i in range(n):
+# 	prod = input('Enter rule {}: '.format(i + 1)).split('->')
+# 	rules[prod[0]] = prod[1].split('|')
+rules = {'E': ['TR'], 'R': ['+TR', '@'], 'T': ['FQ'], 'Q': ['*FQ', '@'], 'F': ['i']}
 
 first = {}
 for i in rules:
@@ -88,7 +89,8 @@ for variable in rules.keys():
 	follow[variable] = find_follow(variable, rules, first)
 
 table = parser_table(rules, first, follow)
-
+print('FIRSTS: {}'.format(first))
+print('FOLLOWS: {}'.format(follow))
 for variable in table.keys():
 	print(variable)
 	print(table[variable], end='\n\n')

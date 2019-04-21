@@ -1,0 +1,4 @@
+int a, b1, c
+a =3
+b1 = "abc"
+c = a + b;
