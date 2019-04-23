@@ -1,51 +1,31 @@
-rules = {}
-stack = '$'
+# Shift Reduce Parser
 
-prod = input('Enter the production rules: ').split('->')
-rules[prod[0]] = prod[1].split('|')
-lhs = [k for k in rules.keys()]
-lhs = ''.join(lhs)
-ip = input('Enter string to be parsed: ') + '$'
+rules, stack = {}, '$'
+prod = input('Enter the production rule: ').split('->')
+lhs = prod[0]
+rules[lhs] = prod[1].split('|')
+ip = input('Enter the string to be parsed: ') + '$'
 
-print('Stack\t\tInput\t\tAction')
-while len(ip) != 1 or stack != ('$' + lhs):
-	if len(stack) == 1 and len(ip) != 1:
-		stack += ip[0]
-		ip = ip[1:]
-		print('{}\t\t{}\t\t{}'.format(stack, ip, 'Shift'))
+print('Stack\tInput\tAction')
+print('{}\t{}\tInitial'.format(stack, ip))
+while len(ip) != 1 or stack != '$' + lhs:
 	temp = ''
-	for i in rules.keys():
+	for i in rules:
 		for j in rules[i]:
 			if j in stack:
 				temp = j
 				break
 	if temp:
 		stack = stack.replace(temp, lhs)
-		print('{}\t\t{}\t\t{}  {}->{}'.format(stack, ip, 'Reduce', lhs, temp))
+		print('{}\t{}\tReduce  {} -> {}'.format(stack, ip, lhs, temp))
 	else:
-		if ip[0] == '$':
+		if ip == '$':
 			break
 		stack += ip[0]
 		ip = ip[1:]
-		print('{}\t\t{}\t\t{}'.format(stack, ip, 'Shift'))
+		print('{}\t{}\tShift'.format(stack, ip))
 
-if stack == '$' + lhs and ip == '$':
+if ip == '$' and stack == '$' + lhs:
 	print('String is accepted')
 else:
 	print('String is rejected')
-
-"""aditya@aditya-HP-Pavilion-Notebook:~/Desktop/College/Codes/SPCC$ python shift_reduce.py
-Enter the production rules: E->E+E|E*E|i
-Enter string to be parsed: i+i*i
-Stack		Input		Action
-$i		+i*i$		Shift
-$E		+i*i$		Reduce  E->i
-$E+		i*i$		Shift
-$E+i		*i$		Shift
-$E+E		*i$		Reduce  E->i
-$E		*i$		Reduce  E->E+E
-$E*		i$		Shift
-$E*i		$		Shift
-$E*E		$		Reduce  E->i
-$E		$		Reduce  E->E*E
-String is accepted"""
